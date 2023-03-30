@@ -6,9 +6,9 @@ import Error from "./routes/error";
 function App() {
   return (
     <Routes>
+      <Route path="*" element={<Error />} />
       <Route path="/" element={<Homepage />} />
       <Route path="/user" element={<User />} />
-      <Route path="*" element={<Error />} />
     </Routes>
   );
 }
