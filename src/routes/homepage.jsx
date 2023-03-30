@@ -31,29 +31,22 @@ const Homepage = () => {
       onSubmit={handleSubmit}
       className="flex flex-col items-center justify-center gap-5"
     >
-      <p>{formFields.avatar}</p>
-      <p>{formFields.username}</p>
-      <p>{formFields.password}</p>
-      <p>{formFields.user}</p>
-
       <img
         className="h-40 aspect-square rounded-[50%]"
         src={Avatar}
         alt="avatar"
       />
-
-      {!avatar ? (
+      {avatar ? (
+        <></>
+      ) : (
         <>
-          <label for="avatar">Choose a profile picture:</label>
           <input
             type="file"
             name="avatar"
-            accept="image/png, image/jpeg, image/jpg"
+            accept="image/*"
             onChange={(e) => console.log(e.target.files[0])}
           />
         </>
-      ) : (
-        <></>
       )}
 
       <FormInput

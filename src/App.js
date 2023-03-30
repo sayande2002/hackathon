@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./routes/homePage.jsx";
-import User from "./routes/userPage";
+import Homepage from "./routes/homepage";
+import User from "./routes/userpage";
 import Error from "./routes/error";
 
 function App() {

@@ -13,16 +13,16 @@ const User = () => {
         src={Avatar}
         alt="avatar"
       />
-      <table className="w-[480px] border-black">
-        <tr className="bg-black text-white border-white border-2">
-          <th>User Name</th>
-          <th>User Type</th>
-          <th>Password</th>
+      <table className="w-[480px] border-black border-2">
+        <tr className="bg-black text-white">
+          <th className="border border-white">User Name</th>
+          <th className="border border-white">User Type</th>
+          <th className="border border-white">Password</th>
         </tr>
         <tr className="text-center">
-          <td>Alfreds</td>
-          <td>Alfreds</td>
-          <td>Alfreds</td>
+          <td className="border border-black">Alfreds</td>
+          <td className="border border-black">Alfreds</td>
+          <td className="border border-black">Alfreds</td>
         </tr>
       </table>
       <Link onClick={() => navigate(-1)}>
