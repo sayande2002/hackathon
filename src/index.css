@@ -13,15 +13,3 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   color: black;
 }
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255);
-}
-::-webkit-scrollbar-thumb {
-  background: black;
-  border: 0.6 solid transparent;
-  background-clip: content-box;
-}

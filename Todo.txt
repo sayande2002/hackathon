@@ -3,9 +3,8 @@ Evaluation process will be based on the project submission.
 
 After Creation zip your whole project folder and mail to: subhammitra58@gmail.com within Friday 10 P.M.
 
-
-Create a Basic Login page with username and password field and user type(staff/student)
-and after login redirect to a user specific profile page where user's name(The name entered in login form),
+1. Create a Basic Login page with username and password field and user type(staff/student)
+2. And after login redirect to a user specific profile page where user's name(The name entered in login form),
 user's type,password will be shown in a table format and a profile picture at the top of the page. 
 
 
