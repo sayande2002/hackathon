@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { DataContext } from "../context/datacontext";
 import Custombutton from "../components/customButton";
 import Avatar from "../assests/user-icon.jpg";
+
 const Userpage = () => {
+  const { fields } = useContext(DataContext);
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center gap-4">
@@ -19,9 +22,9 @@ const Userpage = () => {
           <th className="border border-white">Password</th>
         </tr>
         <tr className="text-center">
-          <td className="border border-black">Alfreds</td>
-          <td className="border border-black">Alfreds</td>
-          <td className="border border-black">Alfreds</td>
+          <td className="border border-black">{fields?.username ?? "Null"}</td>
+          <td className="border border-black">{fields?.user ?? "Null"}</td>
+          <td className="border border-black">{fields?.password ?? "Null"}</td>
         </tr>
       </table>
       <Link onClick={() => navigate(-1)}>

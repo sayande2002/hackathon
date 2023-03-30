@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { DataContext } from "../context/datacontext";
 import FormInput from "../components/formInput";
 import Custombutton from "../components/customButton";
 import Avatar from "../assests/user-icon.jpg";
@@ -12,6 +13,7 @@ const defaultformFields = {
 };
 
 const Homepage = () => {
+  const { setFields } = useContext(DataContext);
   const navigate = useNavigate();
   const avatarInputRef = useRef();
   const avatarSrc = useRef();
@@ -20,6 +22,7 @@ const Homepage = () => {
   const { avatar, username, password, user } = formFields;
 
   const handleSubmit = () => {
+    setFields({ ...formFields });
     navigate("/user");
   };
 
@@ -56,19 +59,14 @@ const Homepage = () => {
           avatarInputRef.current.click();
         }}
       />
-      {avatar ? (
-        <></>
-      ) : (
-        <>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={fileChange}
-            className="hidden"
-            ref={avatarInputRef}
-          />
-        </>
-      )}
+
+      <input
+        type="file"
+        accept="image/*"
+        onChange={fileChange}
+        className="hidden"
+        ref={avatarInputRef}
+      />
 
       <FormInput
         type="text"
