@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/formInput";
 import Custombutton from "../components/customButton";
@@ -13,6 +13,8 @@ const defaultformFields = {
 
 const Homepage = () => {
   const navigate = useNavigate();
+  const avatarInputRef = useRef();
+  const avatarSrc = useRef();
 
   const [formFields, setFormFields] = useState(defaultformFields);
   const { avatar, username, password, user } = formFields;
@@ -22,8 +24,19 @@ const Homepage = () => {
   };
 
   const handleChange = (event) => {
+    console.log(event.target.name);
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
+  };
+
+  const fileChange = (event) => {
+    console.log(event.target.files[0]);
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      document.getElementById("imgTemplate").src = reader.result;
+    };
   };
 
   return (
@@ -31,10 +44,17 @@ const Homepage = () => {
       onSubmit={handleSubmit}
       className="flex flex-col items-center justify-center gap-5"
     >
+      <p className="text-3xl font-bold text-center">Login Page</p>
       <img
-        className="h-40 aspect-square rounded-[50%]"
-        src={Avatar}
+        className="h-40 aspect-square rounded-[50%] border-black border-2 cursor-pointer object-cover"
+        ref={avatarSrc}
+        id="imgTemplate"
+        src={avatar}
         alt="avatar"
+        onClick={(event) => {
+          event.preventDefault();
+          avatarInputRef.current.click();
+        }}
       />
       {avatar ? (
         <></>
@@ -42,9 +62,10 @@ const Homepage = () => {
         <>
           <input
             type="file"
-            name="avatar"
             accept="image/*"
-            onChange={(e) => console.log(e.target.files[0])}
+            onChange={fileChange}
+            className="hidden"
+            ref={avatarInputRef}
           />
         </>
       )}

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./routes/homepage";
-import User from "./routes/userpage";
+import Userpage from "./routes/userpage";
 import Error from "./routes/error";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <Routes>
       <Route path="*" element={<Error />} />
       <Route path="/" element={<Homepage />} />
-      <Route path="/user" element={<User />} />
+      <Route path="/user" element={<Userpage />} />
     </Routes>
   );
 }

@@ -3,13 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Custombutton from "../components/customButton";
 import Avatar from "../assests/user-icon.jpg";
 
-const User = () => {
+const Userpage = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <p className="text-3xl font-bold text-center">User Page</p>
       <img
-        className="h-40 aspect-square rounded-[50%]"
+        className="h-40 aspect-square rounded-[50%] border-black border-2"
         src={Avatar}
         alt="avatar"
       />
@@ -32,4 +32,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Userpage;
