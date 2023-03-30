@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Custombutton from "../components/customButton";
 import Avatar from "../assests/user-icon.jpg";
-
 const Userpage = () => {
   const navigate = useNavigate();
   return (
